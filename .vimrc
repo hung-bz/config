@@ -7,6 +7,10 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'itchyny/lightline.vim'
+call vundle#end()
+
+let g:lightline = {'colorscheme': 'jellybeans', }
 syntax on
 color peachpuff
 set tabstop=2
@@ -20,6 +24,7 @@ set laststatus=2
 set noshowmode
 set ttimeout
 set ttimeoutlen=0
+set timeoutlen=0
 set noswapfile
 set incsearch
 set hlsearch
