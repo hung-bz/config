@@ -3,11 +3,12 @@ filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
+call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
 
 let g:lightline = {'colorscheme': 'jellybeans', }
