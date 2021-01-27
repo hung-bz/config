@@ -16,6 +16,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion= 1
 syntax on
 color peachpuff
+
+" for solarize to pick up green color
+hi Comment ctermfg=64
+
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
