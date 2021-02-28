@@ -35,6 +35,7 @@ set timeoutlen=0
 set noswapfile
 set incsearch
 set hlsearch
+set showcmd
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
