@@ -11,7 +11,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
 
-let g:lightline = {'colorscheme': 'jellybeans', }
+let g:lightline = {'colorscheme': 'powerlineish', }
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion= 1
 let g:ycm_show_diagnostics_ui = 0
