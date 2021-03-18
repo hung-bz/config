@@ -40,6 +40,7 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\] \[\e
 unset color_prompt force_color_prompt
 
 export EDITOR='vim'
+export PATH="$HOME/bin:$PATH"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
