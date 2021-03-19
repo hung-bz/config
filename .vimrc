@@ -20,7 +20,7 @@ color peachpuff
 
 " for solarize to pick up green color
 hi Comment ctermfg=64 cterm=bold
-
+set clipboard=unnamedplus
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
