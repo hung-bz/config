@@ -1,45 +1,58 @@
 set nocompatible
 filetype off
 
-" set the runtime path to include Vundle and initialize
+" Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-
 call vundle#begin()
-" let Vundle manage Vundle, required
+" Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
-
+" Status bar
 let g:lightline = {'colorscheme': 'powerlineish', }
+" Genuinely dont remember
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion= 1
+" No more autocomplete highlighting
 let g:ycm_show_diagnostics_ui = 0
+
+" Syntax highlighting
 syntax on
 color peachpuff
-
-" for solarize to pick up green color
+" For solarize to pick up green color
 hi Comment ctermfg=64 cterm=bold
+
+" Set vim clipboard to use system clipboard
 set clipboard=unnamedplus
+" Tab is now space, length 2
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+" Line numbers
 set number
 set autoindent
 set smartindent
 set laststatus=2
+" Save space for status bar, delete if no status bar install
 set noshowmode
+" Instant esc
 set ttimeout
 set ttimeoutlen=0
 set timeoutlen=0
+" Yea might bite myself in the ass with this one
 set noswapfile
+" Better search highlight
 set incsearch
 set hlsearch
+" Show normal mode command
 set showcmd
+" Mouse to scroll
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
+" Some keybindings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
