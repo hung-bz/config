@@ -22,7 +22,9 @@ syntax on
 color peachpuff
 " For solarize to pick up green color
 hi Comment ctermfg=64 cterm=bold
-
+" Better highlight word color
+hi Search ctermfg=Black
+hi Visual ctermfg=Black
 " Set vim clipboard to use system clipboard
 set clipboard=unnamedplus
 " Tab is now space, length 2
