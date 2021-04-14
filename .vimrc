@@ -52,8 +52,8 @@ set hlsearch
 set showcmd
 " Mouse to scroll
 set mouse=a
-map <ScrollWheelUp> <C-Y>
-map <ScrollWheelDown> <C-E>
+map <ScrollWheelUp> 3<C-Y>
+map <ScrollWheelDown> 3<C-E>
 " Some keybindings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
