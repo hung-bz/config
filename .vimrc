@@ -50,6 +50,9 @@ set incsearch
 set hlsearch
 " Show normal mode command
 set showcmd
+" Split side
+set splitbelow
+set splitright
 " Mouse to scroll
 set mouse=a
 map <ScrollWheelUp> 3<C-Y>
@@ -59,9 +62,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" Better indenting while in visual and normal mode
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
 vnoremap > >gv
 vnoremap < <gv
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-set splitbelow
-set splitright
