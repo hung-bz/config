@@ -10,7 +10,13 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
 " Status bar
-let g:lightline = {'colorscheme': 'powerlineish', }
+" Small function to show the file relative path
+" In hindsight I should have just use vim own status bar
+let g:lightline = {'colorscheme': 'powerlineish', 'component_function': {'filename': 'LightlineFilename'}}
+function LightlineFilename()
+  return expand('%')
+endfunction
+
 " Genuinely dont remember
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion= 1
