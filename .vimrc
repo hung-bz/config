@@ -41,7 +41,6 @@ set expandtab
 " Line numbers
 set number
 set autoindent
-set smartindent
 set laststatus=2
 " Save space for status bar, delete if no status bar install
 set noshowmode
