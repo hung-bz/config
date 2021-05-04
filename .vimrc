@@ -10,9 +10,9 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
 " Status bar
-" Small function to show the file relative path
-" In hindsight I should have just use vim own status bar
 let g:lightline = {'colorscheme': 'powerlineish', 'component_function': {'filename': 'LightlineFilename'}}
+" Small function to show the file relative path
+" In hindsight I should have just use vim's own status bar
 function LightlineFilename()
   return expand('%')
 endfunction
@@ -59,6 +59,7 @@ set showcmd
 set splitbelow
 set splitright
 " Mouse to scroll
+" Change the number for different scroll speed
 set mouse=a
 map <ScrollWheelUp> 3<C-Y>
 map <ScrollWheelDown> 3<C-E>
