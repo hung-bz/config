@@ -36,7 +36,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\033[01;34m\]\w\[\033[00m\] \[\e[01;31m\]»\[\e[m\] '
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\033[01;34m\]\w\[\033[00m\]\[\e[01;31m\]$(__git_ps1) »\[\e[m\] '
 unset color_prompt force_color_prompt
 
 export EDITOR='vim'
