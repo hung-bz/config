@@ -1,6 +1,8 @@
 set nocompatible
 filetype off
 
+" Fuzzy Find
+set rtp+=~/.vim/bundle/fzf
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -8,6 +10,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 call vundle#end()
 " Status bar
 let g:lightline = {'colorscheme': 'powerlineish', 'component_function': {'filename': 'LightlineFilename'}}
@@ -16,6 +20,7 @@ let g:lightline = {'colorscheme': 'powerlineish', 'component_function': {'filena
 function LightlineFilename()
   return expand('%')
 endfunction
+
 
 " Genuinely dont remember
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -34,9 +39,9 @@ hi Visual ctermfg=Black
 " Set vim clipboard to use system clipboard
 set clipboard=unnamedplus
 " Tab is now space, length 2
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 " Line numbers
 set number
@@ -75,3 +80,5 @@ vnoremap > >gv
 vnoremap < <gv
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+" Work around for <C-i> since alacritty saw it as <tab>
+nnoremap <C-n>i <C-i>
