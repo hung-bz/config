@@ -91,3 +91,8 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# git diff, bit with color
+batdiff() {
+    git diff --name-only --diff-filter=d | xargs bat --diff
+}
+export -f batdiff
