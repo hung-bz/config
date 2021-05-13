@@ -91,6 +91,8 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS='
+    --color=hl:#dc322f,hl+:#dc322f'
 # git diff, bit with color
 batdiff() {
     git diff --name-only --diff-filter=d | xargs bat --diff
