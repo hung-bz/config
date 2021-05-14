@@ -58,7 +58,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias jn='jupyter notebook' 
-
+alias bat='bat --theme="ansi" --paging=never'
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -90,6 +90,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPTS='
     --color=hl:#dc322f,hl+:#dc322f'
