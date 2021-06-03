@@ -8,19 +8,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'itchyny/lightline.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 call vundle#end()
-" Status bar
-let g:lightline = {'colorscheme': 'powerlineish', 'component_function': {'filename': 'LightlineFilename'}}
-" Small function to show the file relative path
-" In hindsight I should have just use vim's own status bar
-function LightlineFilename()
-  return expand('%')
-endfunction
-
 
 " Genuinely dont remember
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -39,16 +30,14 @@ hi Visual ctermfg=Black
 " Set vim clipboard to use system clipboard
 set clipboard=unnamedplus
 " Tab is now space, length 2
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 " Line numbers
 set number
 set autoindent
-set laststatus=2
-" Save space for status bar, delete if no status bar install
-set noshowmode
+set laststatus=1
 " Instant esc
 set ttimeout
 set ttimeoutlen=0
@@ -63,11 +52,6 @@ set showcmd
 " Split side
 set splitbelow
 set splitright
-" Mouse to scroll
-" Change the number for different scroll speed
-set mouse=a
-map <ScrollWheelUp> 3<C-Y>
-map <ScrollWheelDown> 3<C-E>
 " Some keybindings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
