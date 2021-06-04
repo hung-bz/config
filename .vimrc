@@ -22,8 +22,8 @@ let g:ycm_show_diagnostics_ui = 0
 " Syntax highlighting
 syntax on
 color peachpuff
-" For solarize to pick up green color
-hi Comment ctermfg=64 cterm=bold
+" Green comments
+hi Comment ctermfg=darkgreen cterm=bold
 " Better highlight word color
 hi Search ctermfg=Black
 hi Visual ctermfg=Black
