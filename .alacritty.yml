@@ -32,19 +32,23 @@ font:
   dynamic_padding: true
 
 draw_bold_text_with_bright_colors: false
+
 colors:
+  # Default colors
   primary:
-    background: '#1f1e1f'
+    background: '#181818'
     foreground: '#ffffff'
+
+  # Normal colors
   normal:
-    black:   '#073642' # base02
-    red:     '#dc322f' # red
-    green:   '#859900' # green
-    yellow:  '#b58900' # yellow
-    blue:    '#268bd2' # blue
-    magenta: '#d33682' # magenta
-    cyan:    '#2aa198' # cyan
-    white:   '#ffffff' # base2
+    black:   '0x0d0d0d'
+    red:     '0xFF301B'
+    green:   '0xA0E521'
+    yellow:  '0xFFC620'
+    blue:    '0x1BA6FA'
+    magenta: '0x8763B8'
+    cyan:    '0x21DEEF'
+    white:   '0xEBEBEB'
 
 # Bell
 #
