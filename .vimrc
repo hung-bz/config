@@ -25,8 +25,8 @@ color peachpuff
 " Green comments
 hi Comment ctermfg=darkgreen cterm=bold
 " Better highlight word color
-hi Search ctermfg=Black
-hi Visual ctermfg=Black
+hi Search cterm=inverse ctermbg=black
+hi Visual cterm=inverse ctermbg=black
 " Set vim clipboard to use system clipboard
 set clipboard=unnamedplus
 " Tab is now space, length 2
@@ -58,8 +58,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " Better indenting while in visual and normal mode
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
 vnoremap > >gv
 vnoremap < <gv
 vnoremap <Tab> >gv
