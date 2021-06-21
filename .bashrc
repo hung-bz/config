@@ -6,7 +6,7 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 
 # Bash prompt personalize
-export PS1='\[\033[01;32m\]\u\[\033[00m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\033[01;36m\]\w\[\033[00m\]\033[01;35m\]$(__git_ps1)\[\e[m\] \[\e[01;31m\]»\[\e[m\] '
+export PS1='\[\033[01;32m\]\]\u\[\033[00m\]\] \[\e[m\]\]\[\e[31m\]\]:\[\e[m\]\]\[\e[31m\]\]:\[\e[m\]\] \[\033[01;36m\]\]\w\[\033[00m\]\]\033[01;35m\]$(__git_ps1)\[\e[m\]\] \[\e[01;31m\]\]»\[\e[m\]\] '
 
 LS_COLORS=$LS_COLORS:'di=1;36:'
 export LS_COLORS
@@ -21,6 +21,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias jn='jupyter notebook' 
 alias bat='bat --theme="ansi" --paging=never'
+alias xopen='xdg-open'
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
