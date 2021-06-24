@@ -1,4 +1,4 @@
-window:
+indow:
   # Starting window size
   dimensions:
     columns: 100
@@ -19,17 +19,17 @@ font:
     family: SFMono
     style: Heavy
 
-  size: 10.0
+  size: 9.0
   offset:
     x: 0
-    y: 1
+    y: 0
   glyph_offset:
     x: 0
     y: 0
   padding:
-    x: 10
+    x: 0
     y: 0
-  dynamic_padding: true
+  dynamic_padding: false
 
 draw_bold_text_with_bright_colors: false
 
