@@ -1,4 +1,5 @@
 *
+!/.xmonad/xmonad.hs
 !.gitignore
 !.vimrc
 !.tmux.conf
