@@ -1,4 +1,4 @@
-indow:
+window:
   # Starting window size
   dimensions:
     columns: 100

@@ -26,7 +26,7 @@ alias xopen='xdg-open'
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPTS='
-    --color=hl:#dc322f,hl+:#dc322f'
+    --color=hl:#dc322f,hl+:#dc322f,pointer:#FF0000'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
