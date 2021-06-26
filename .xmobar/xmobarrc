@@ -12,8 +12,10 @@ Config { font    = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=t
                     , Run Cpu ["-L","3","-H","50", "--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Com "bash" ["/home/crow/.xmobar/getVolume"] "myvolume" 10
+                    , Run DynNetwork [] 10
+                    , Run Wireless "wlp1s0" ["-t", "<essid>"] 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <fc=#666666>|</fc> %StdinReader% } %date% { %cpu% | %memory% | %myvolume% | %battery%"
+       , template = " <fc=#666666>|</fc> %StdinReader% } %date% { %cpu% | %memory% | %wlp1s0wi% | %dynnetwork% | %myvolume% | %battery%"
        }
