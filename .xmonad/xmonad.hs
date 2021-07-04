@@ -29,7 +29,7 @@ myLayoutHook = avoidStruts (tiled ||| Mirror tiled ||| Full)
 
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
-  where fadeAmount = 1.0
+  where fadeAmount = 0.9
 
 myWorkspaces :: [String]
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8"]
@@ -45,6 +45,8 @@ main = do
     , modMask = mod4Mask
     , workspaces = myWorkspaces
     , borderWidth = 2
+    , focusedBorderColor = "#FFFFFF"
+    , normalBorderColor = "#000000"
     , startupHook = myStartupHook
     , manageHook = composeAll [manageDocks, manageHook def]
     , handleEventHook = serverModeEventHookCmd
@@ -68,4 +70,5 @@ main = do
     [ ((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
     , ((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
     , ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
+    , ((mod4Mask .|. shiftMask, xK_p ), spawn ("j4-dmenu-desktop"))
     ]
