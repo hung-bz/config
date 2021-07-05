@@ -1,5 +1,5 @@
 Config { font    = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=true"
-       , bgColor = "black"
+       , bgColor = "#101010"
        , fgColor = "white"
        , position = Static { xpos = 1920 , ypos = 0, width = 1920, height = 20 }
        , lowerOnStart = True
