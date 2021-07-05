@@ -2,6 +2,9 @@ import XMonad
 import System.IO (hPutStrLn)
 import qualified XMonad.StackSet as W
 
+import XMonad.Layout.Minimize
+import XMonad.Actions.Minimize
+
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.FadeInactive
@@ -20,7 +23,7 @@ myStartupHook = do
   spawnOnce "nitrogen --restore"
   spawnOnce "compton --backend glx --vsync opengl &"
 
-myLayoutHook = avoidStruts (tiled ||| Mirror tiled ||| Full)
+myLayoutHook = minimize $ avoidStruts ( tiled |||  Mirror tiled ||| Full)
   where
     tiled = Tall nmaster delta ratio
     nmaster = 1
@@ -32,7 +35,7 @@ myLogHook = fadeInactiveLogHook fadeAmount
   where fadeAmount = 0.9
 
 myWorkspaces :: [String]
-myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8"]
+myWorkspaces = ["1:laptop", "2:main", "3", "4", "5", "6", "7", "8", "9"]
       
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
@@ -42,9 +45,9 @@ main = do
   xmproc <- spawnPipe "xmobar /home/crow/.xmobar/xmobarrc "
   xmonad $ docks def
     { terminal = "alacritty"
-    , modMask = mod4Mask
+    , modMask = mod1Mask
     , workspaces = myWorkspaces
-    , borderWidth = 2
+    , borderWidth = 3
     , focusedBorderColor = "#FFFFFF"
     , normalBorderColor = "#000000"
     , startupHook = myStartupHook
@@ -70,5 +73,7 @@ main = do
     [ ((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
     , ((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
     , ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
-    , ((mod4Mask .|. shiftMask, xK_p ), spawn ("j4-dmenu-desktop"))
+    , ((mod1Mask .|. shiftMask, xK_p), spawn ("j4-dmenu-desktop"))
+    , ((mod1Mask, xK_m), withFocused minimizeWindow)
+    , ((mod1Mask .|. shiftMask, xK_m), withLastMinimized maximizeWindowAndFocus)
     ]
