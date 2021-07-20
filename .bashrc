@@ -1,3 +1,10 @@
+# Caplock as Ctrl and Esc
+/usr/bin/setxkbmap -option 'caps:ctrl_modifier'
+/usr/bin/xcape -e 'Caps_Lock=Escape' -t 100
+
+# Custom bin dir
+export PATH=$PATH":$HOME/bin"
+
 HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
