@@ -3,6 +3,7 @@ import System.IO (hPutStrLn)
 import qualified XMonad.StackSet as W
 
 import XMonad.Layout.Minimize
+import XMonad.Layout.NoBorders
 import XMonad.Actions.Minimize
 
 import XMonad.Hooks.ManageDocks
@@ -23,7 +24,7 @@ myStartupHook = do
   spawnOnce "nitrogen --restore"
   spawnOnce "compton --backend glx --vsync opengl &"
 
-myLayoutHook = minimize $ avoidStruts ( tiled |||  Mirror tiled ||| Full)
+myLayoutHook = minimize ( avoidStruts ( tiled ||| Mirror tiled ||| noBorders Full ))
   where
     tiled = Tall nmaster delta ratio
     nmaster = 1
@@ -32,7 +33,7 @@ myLayoutHook = minimize $ avoidStruts ( tiled |||  Mirror tiled ||| Full)
 
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
-  where fadeAmount = 0.9
+  where fadeAmount = 0.95
 
 myWorkspaces :: [String]
 myWorkspaces = ["1:laptop", "2:main", "3", "4", "5", "6", "7", "8", "9"]
@@ -47,7 +48,7 @@ main = do
     { terminal = "alacritty"
     , modMask = mod1Mask
     , workspaces = myWorkspaces
-    , borderWidth = 3
+    , borderWidth = 2
     , focusedBorderColor = "#FFFFFF"
     , normalBorderColor = "#000000"
     , startupHook = myStartupHook
