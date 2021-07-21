@@ -77,4 +77,5 @@ main = do
     , ((mod1Mask .|. shiftMask, xK_p), spawn ("j4-dmenu-desktop"))
     , ((mod1Mask, xK_m), withFocused minimizeWindow)
     , ((mod1Mask .|. shiftMask, xK_m), withLastMinimized maximizeWindowAndFocus)
+    , ((mod1Mask, xK_b ), sendMessage ToggleStruts)
     ]
