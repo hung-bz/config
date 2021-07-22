@@ -27,6 +27,9 @@ hi Comment ctermfg=darkgreen cterm=bold
 " Better highlight word color
 hi Search cterm=inverse ctermbg=black
 hi Visual cterm=inverse ctermbg=black
+" Cursor line highlight  
+hi CursorLine cterm=underline
+
 " Set vim clipboard to use system clipboard
 set clipboard=unnamedplus
 " Tab is now space, length 2
@@ -38,10 +41,10 @@ set expandtab
 set number
 set autoindent
 set laststatus=1
-" Instant esc
-set ttimeout
-set ttimeoutlen=0
-set timeoutlen=0
+" Instant esc, uncomment if the esc feel slow but will probably cause by other stuff
+"set ttimeout
+"set ttimeoutlen=10
+"set timeoutlen=10
 " Yea might bite myself in the ass with this one
 set noswapfile
 " Better search highlight
@@ -52,6 +55,9 @@ set showcmd
 " Split side
 set splitbelow
 set splitright
+
+" Map leader
+let mapleader="\<space>"
 " Some keybindings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -64,3 +70,8 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 " Work around for <C-i> since alacritty saw it as <tab>
 nnoremap <C-n>i <C-i>
+" Toggle cursor line highlight
+nnoremap <leader>c :set cursorline!<CR>
+" Auto center when moving up and down
+nnoremap <C-U> <C-U>zz
+nnoremap <C-D> <C-D>zz
