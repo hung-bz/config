@@ -23,6 +23,8 @@ import Graphics.X11.ExtraTypes.XF86
 myStartupHook = do
   spawnOnce "nitrogen --restore"
   spawnOnce "compton --backend glx --vsync opengl &"
+  spawnOnce "syndaemon -i 1 -d -t -K -R"
+  spawnOnce "xscreensaver & -no-splash"
 
 myLayoutHook = minimize ( avoidStruts ( tiled ||| Mirror tiled ||| noBorders Full ))
   where
@@ -71,7 +73,7 @@ main = do
         }
     }
     `additionalKeys`
-    [ ((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+    ([ ((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
     , ((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
     , ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
     , ((mod1Mask .|. shiftMask, xK_p), spawn ("j4-dmenu-desktop"))
@@ -79,3 +81,7 @@ main = do
     , ((mod1Mask .|. shiftMask, xK_m), withLastMinimized maximizeWindowAndFocus)
     , ((mod1Mask, xK_b ), sendMessage ToggleStruts)
     ]
+    ++
+    [ ((m .|. mod1Mask, k), windows $ f i) | (i, k) <- zip myWorkspaces [xK_1 .. xK_9]
+    , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
+    ])
