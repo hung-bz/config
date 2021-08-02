@@ -1,9 +1,9 @@
-# Caplock as Ctrl and Esc
-/usr/bin/setxkbmap -option 'caps:ctrl_modifier'
-/usr/bin/xcape -e 'Caps_Lock=Escape' -t 100
-
 # Custom bin dir
 export PATH=$PATH":$HOME/bin"
+
+# Esc to Ctrl and Caplock
+/usr/bin/setxkbmap -option 'caps:ctrl_modifier'
+/usr/bin/xcape -e 'Caps_Lock=Escape' -t 100
 
 HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
@@ -12,6 +12,8 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 shopt -s checkwinsize
 
+# Source git `prompt for PS1
+source '/home/crow/.git-prompt.sh'
 # Bash prompt personalize
 export PS1='\[\e[01;32m\]\u\[\e[00m\] \[\e[01;31m\]::\[\e[00m\] \[\e[01;36m\]\w\[\e[00m\]\[\e[01;35m\]$(__git_ps1)\[\e[00m\] \[\e[01;31m\]»\[\e[00m\] '
 export PS2='» '
