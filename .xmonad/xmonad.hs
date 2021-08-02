@@ -51,7 +51,7 @@ main = do
     , modMask = mod1Mask
     , workspaces = myWorkspaces
     , borderWidth = 2
-    , focusedBorderColor = "#FFFFFF"
+    , focusedBorderColor = "#ffffff"
     , normalBorderColor = "#000000"
     , startupHook = myStartupHook
     , manageHook = composeAll [manageDocks, manageHook def]
@@ -76,7 +76,7 @@ main = do
     ([ ((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
     , ((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
     , ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
-    , ((mod1Mask .|. shiftMask, xK_p), spawn ("j4-dmenu-desktop"))
+    , ((mod1Mask .|. shiftMask, xK_p), spawn "j4-dmenu-desktop")
     , ((mod1Mask, xK_m), withFocused minimizeWindow)
     , ((mod1Mask .|. shiftMask, xK_m), withLastMinimized maximizeWindowAndFocus)
     , ((mod1Mask, xK_b ), sendMessage ToggleStruts)
