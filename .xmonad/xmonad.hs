@@ -5,6 +5,7 @@ import qualified XMonad.StackSet as W
 import XMonad.Layout.Minimize
 import XMonad.Layout.NoBorders
 import XMonad.Actions.Minimize
+import XMonad.Actions.CycleWS
 
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
@@ -25,6 +26,7 @@ myStartupHook = do
   spawnOnce "compton --backend glx --vsync opengl &"
   spawnOnce "syndaemon -i 1 -d -t -K -R"
   spawnOnce "xscreensaver & -no-splash"
+  spawnOnce "natural-scroll"
 
 myLayoutHook = minimize ( avoidStruts ( tiled ||| Mirror tiled ||| noBorders Full ))
   where
@@ -80,6 +82,7 @@ main = do
     , ((mod1Mask, xK_m), withFocused minimizeWindow)
     , ((mod1Mask .|. shiftMask, xK_m), withLastMinimized maximizeWindowAndFocus)
     , ((mod1Mask, xK_b ), sendMessage ToggleStruts)
+    , ((mod1Mask, xK_semicolon), toggleWS)
     ]
     ++
     [ ((m .|. mod1Mask, k), windows $ f i) | (i, k) <- zip myWorkspaces [xK_1 .. xK_9]
