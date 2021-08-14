@@ -1,5 +1,7 @@
 # Custom bin dir
-export PATH=$PATH":$HOME/bin"
+PATH=$PATH":$HOME/bin"
+RISCV=":$HOME/riscv"
+PATH=$PATH":$RISCV/bin"
 
 # Esc to Ctrl and Caplock
 /usr/bin/setxkbmap -option 'caps:ctrl_modifier'
