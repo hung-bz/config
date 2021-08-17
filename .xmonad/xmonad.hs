@@ -56,7 +56,9 @@ main = do
     , focusedBorderColor = "#ffffff"
     , normalBorderColor = "#000000"
     , startupHook = myStartupHook
-    , manageHook = composeAll [manageDocks, manageHook def]
+    , manageHook = composeAll [manageDocks
+                              , manageHook def
+                              , className=? "matplotlib" --> doFloat]
     , handleEventHook = serverModeEventHookCmd
                         <+> serverModeEventHook
                         <+> serverModeEventHookF "XMONAD_PRINT" (io . putStrLn)
