@@ -1,10 +1,3 @@
-*
-!/.xmonad/xmonad.hs
-!/.xmobar/*
-!.gitignore
-!.vimrc
-!.tmux.conf
-!.bashrc
-!.zshrc
-!.condarc
-!.alacritty.yml
+.xmonad/
+!.xmonad/xmonad.hs
+
