@@ -12,19 +12,28 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
-shopt -s checkwinsize
 
 # Source git `prompt for PS1
 source '/home/crow/.git-prompt.sh'
 # Bash prompt personalize
 export PS1='\[\e[01;32m\]\u\[\e[00m\] \[\e[01;31m\]::\[\e[00m\] \[\e[01;36m\]\w\[\e[00m\]\[\e[01;35m\]$(__git_ps1)\[\e[00m\] \[\e[01;31m\]»\[\e[00m\] '
 export PS2='» '
+shopt -s checkwinsize
+
+# Auto cd with just dir name
+shopt -s autocd
+
+# Vi mode
+set -o vi
 
 LS_COLORS=$LS_COLORS:'di=1;36:'
 export LS_COLORS
 
+# Default editor and visual
 export EDITOR='vim'
+export VISUAL='vim'
 
+# Alias
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
