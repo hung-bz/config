@@ -7,8 +7,8 @@ Config { font    = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=t
        , allDesktops = True
        , persistent = True
        , commands = [ Run StdinReader
-                    , Run Date "%a %b %_d %Y %I:%M:%p" "date" 10
-                    , Run Battery ["-t","Battery: <acstatus>","-L","25","-H","75","-h","green","-n","yellow","-l","red"
+                    , Run Date "%a %d %b %I:%M %P" "date" 10
+                    , Run Battery ["-t","<acstatus>","-L","25","-H","75","-h","green","-n","yellow","-l","red"
                     , "--"  
                     , "-o","<left>% (<timeleft>)"
                     , "-O","<left>% Charging"

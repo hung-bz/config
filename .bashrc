@@ -7,25 +7,26 @@ PATH=$PATH":$RISCV/bin"
 /usr/bin/setxkbmap -option 'caps:ctrl_modifier'
 /usr/bin/xcape -e 'Caps_Lock=Escape' -t 100
 
-HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
+HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
 # Source git `prompt for PS1
 source '/home/crow/.git-prompt.sh'
+
 # Bash prompt personalize
 export PS1='\[\e[01;32m\]\u\[\e[00m\] \[\e[01;31m\]::\[\e[00m\] \[\e[01;36m\]\w\[\e[00m\]\[\e[01;35m\]$(__git_ps1)\[\e[00m\] \[\e[01;31m\]»\[\e[00m\] '
 export PS2='» '
-shopt -s checkwinsize
 
-# Auto cd with just dir name
-shopt -s autocd
+# I dunno
+shopt -s checkwinsize
 
 # Vi mode
 set -o vi
 
+# LS color
 LS_COLORS=$LS_COLORS:'di=1;36:'
 export LS_COLORS
 
