@@ -12,6 +12,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.ServerMode
 import XMonad.Hooks.WorkspaceHistory
+import XMonad.Hooks.ManageHelpers
 
 import XMonad.Util.Run
 import XMonad.Util.CustomKeys
@@ -58,7 +59,8 @@ main = do
     , startupHook = myStartupHook
     , manageHook = composeAll [manageDocks
                               , manageHook def
-                              , className=? "matplotlib" --> doFloat]
+                              , className=? "matplotlib" --> doCenterFloat
+                              , className=? "R_x11" --> doCenterFloat]
     , handleEventHook = serverModeEventHookCmd
                         <+> serverModeEventHook
                         <+> serverModeEventHookF "XMONAD_PRINT" (io . putStrLn)
