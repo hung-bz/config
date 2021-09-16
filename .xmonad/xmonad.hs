@@ -86,7 +86,7 @@ main = do
     , ((mod1Mask, xK_m), withFocused minimizeWindow)
     , ((mod1Mask .|. shiftMask, xK_m), withLastMinimized maximizeWindowAndFocus)
     , ((mod1Mask, xK_b ), sendMessage ToggleStruts)
-    , ((mod1Mask, xK_semicolon), toggleWS)
+    , ((mod1Mask, xK_grave), toggleWS)
     ]
     ++
     [ ((m .|. mod1Mask, k), windows $ f i) | (i, k) <- zip myWorkspaces [xK_1 .. xK_9]
