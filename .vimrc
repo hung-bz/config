@@ -13,7 +13,7 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 call vundle#end()
 
-" Genuinely dont remember
+" Something something YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion= 1
 " No more autocomplete highlighting
@@ -32,11 +32,13 @@ hi CursorLine cterm=underline
 
 " Set vim clipboard to use system clipboard
 set clipboard=unnamedplus
-" Tab is now space, length 2
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+
+" Tab spacing
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
+
 " Line numbers
 set number
 set autoindent
@@ -45,13 +47,17 @@ set laststatus=1
 "set ttimeout
 "set ttimeoutlen=10
 "set timeoutlen=10
+
 " Yea might bite myself in the ass with this one
 set noswapfile
+
 " Better search highlight
 set incsearch
 set hlsearch
+
 " Show normal mode command
 set showcmd
+
 " Split side
 set splitbelow
 set splitright
