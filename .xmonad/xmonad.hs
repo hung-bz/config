@@ -29,7 +29,7 @@ myStartupHook = do
   spawnOnce "xscreensaver & -no-splash"
   spawnOnce "natural-scroll"
 
-myLayoutHook = minimize ( avoidStruts ( tiled ||| Mirror tiled ||| noBorders Full ))
+myLayoutHook = minimize ( avoidStruts ( tiled ||| noBorders Full ))
   where
     tiled = Tall nmaster delta ratio
     nmaster = 1
@@ -70,7 +70,7 @@ main = do
         { ppOutput = hPutStrLn xmproc
         , ppCurrent = xmobarColor "#c3e88d" "" . wrap "[" "]" -- Current workspace in xmobar
         , ppVisible = xmobarColor "#c3e88d" ""                -- Visible but not current workspace
-        , ppHidden = xmobarColor "#82AAFF" "" . wrap "*" ""   -- Hidden workspaces in xmobar
+        , ppHidden = xmobarColor "#82AAFF" "" . wrap "" ""    -- Hidden workspaces in xmobar
         , ppHiddenNoWindows = xmobarColor "#F07178" ""        -- Hidden workspaces (no windows)
         , ppTitle = xmobarColor "#d0d0d0" "" . shorten 60     -- Title of active window in xmobar
         , ppSep =  "<fc=#666666> | </fc>"                     -- Separators in xmobar
