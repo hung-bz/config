@@ -24,7 +24,7 @@ import Graphics.X11.ExtraTypes.XF86
 
 myStartupHook = do
   spawnOnce "nitrogen --restore"
-  spawnOnce "compton --backend glx --vsync opengl &"
+  -- spawnOnce "compton --backend xrender --vsync opengl &"
   spawnOnce "syndaemon -i 1 -d -t -K -R"
   spawnOnce "xscreensaver & -no-splash"
   spawnOnce "natural-scroll"
@@ -36,9 +36,6 @@ myLayoutHook = minimize ( avoidStruts ( tiled ||| noBorders Full ))
     ratio = 1/2
     delta = 3/100
 
-myLogHook :: X ()
-myLogHook = fadeInactiveLogHook fadeAmount
-  where fadeAmount = 0.95
 
 myWorkspaces :: [String]
 myWorkspaces = ["1:laptop", "2:main", "3", "4", "5", "6", "7", "8", "9"]
@@ -66,7 +63,7 @@ main = do
                         <+> serverModeEventHookF "XMONAD_PRINT" (io . putStrLn)
                         <+> docksEventHook 
     , layoutHook = myLayoutHook
-    , logHook = workspaceHistoryHook <+> myLogHook <+> dynamicLogWithPP xmobarPP 
+    , logHook = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP 
         { ppOutput = hPutStrLn xmproc
         , ppCurrent = xmobarColor "#c3e88d" "" . wrap "[" "]" -- Current workspace in xmobar
         , ppVisible = xmobarColor "#c3e88d" ""                -- Visible but not current workspace
