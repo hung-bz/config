@@ -4,12 +4,13 @@ import qualified XMonad.StackSet as W
 
 import XMonad.Layout.Minimize
 import XMonad.Layout.NoBorders
+import XMonad.Layout.Reflect
+import XMonad.Layout.Renamed
 import XMonad.Actions.Minimize
 import XMonad.Actions.CycleWS
 
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.ServerMode
 import XMonad.Hooks.WorkspaceHistory
 import XMonad.Hooks.ManageHelpers
@@ -29,7 +30,7 @@ myStartupHook = do
   spawnOnce "xscreensaver & -no-splash"
   spawnOnce "natural-scroll"
 
-myLayoutHook = minimize ( avoidStruts ( tiled ||| noBorders Full ))
+myLayoutHook = minimize ( avoidStruts ( tiled ||| reflectHoriz tiled |||  noBorders Full ))
   where
     tiled = Tall nmaster delta ratio
     nmaster = 1
