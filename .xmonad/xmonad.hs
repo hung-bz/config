@@ -25,7 +25,6 @@ import Graphics.X11.ExtraTypes.XF86
 
 myStartupHook = do
   spawnOnce "nitrogen --restore"
-  -- spawnOnce "compton --backend xrender --vsync opengl &"
   spawnOnce "syndaemon -i 1 -d -t -K -R"
   spawnOnce "xscreensaver & -no-splash"
   spawnOnce "natural-scroll"
