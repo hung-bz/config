@@ -17,7 +17,7 @@ HISTFILESIZE=2000
 source '/home/crow/.git-prompt.sh'
 
 # Bash prompt personalize
-export PS1='\[\e[01;32m\]\u\[\e[00m\] \[\e[01;31m\]::\[\e[00m\] \[\e[01;36m\]\w\[\e[00m\]\[\e[01;35m\]$(__git_ps1)\[\e[00m\] \[\e[01;31m\]»\[\e[00m\] '
+export PS1='\[\e[00;33m\][$CONDA_DEFAULT_ENV]\[\e[00m\] \[\e[01;32m\]\u\[\e[00m\] \[\e[01;31m\]::\[\e[00m\] \[\e[01;36m\]\w\[\e[00m\]\[\e[00;35m\]$(__git_ps1)\[\e[00m\] \[\e[01;31m\]»\[\e[00m\] '
 export PS2='» '
 
 # I dunno
@@ -63,3 +63,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+alias tce='conda activate $(tmux show-environment CONDA_DEFAULT_ENV | sed "s:^.*=::")'
