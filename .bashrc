@@ -42,7 +42,9 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias jn='jupyter notebook' 
+alias jb='jupyter lab'
 alias xop='xdg-open'
+alias tce='conda activate $(tmux show-environment CONDA_DEFAULT_ENV | sed "s:^.*=::")'
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -64,4 +66,3 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-alias tce='conda activate $(tmux show-environment CONDA_DEFAULT_ENV | sed "s:^.*=::")'
