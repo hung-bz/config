@@ -77,6 +77,7 @@ vnoremap <S-Tab> <gv
 " Work around for <C-i> since alacritty saw it as <tab>
 nnoremap <C-n>i <C-i>
 " Toggle cursor line highlight
+highlight CursorLine cterm=None
 nnoremap <leader>c :set cursorline!<CR>
 " Auto center when moving up and down
 nnoremap <C-U> <C-U>zz
