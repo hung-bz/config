@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-" Fuzzy Find
+"" Fuzzy Find
 set rtp+=~/.vim/bundle/fzf
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -9,9 +9,15 @@ call vundle#begin()
 " Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+"Plugin 'junegunn/fzf'
+"Plugin 'junegunn/fzf.vim'
 call vundle#end()
+
+" Let tmux change its pane name base on vim file name
+" That is currectly in focus
+autocmd BufEnter,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window 'vim " . expand("%:t") . "'")
+" Clean up when leaving vim
+autocmd VimLeave * call system("tmux setw automatic-rename")
 
 " Something something YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -31,18 +37,18 @@ hi Visual cterm=inverse ctermbg=black
 hi CursorLine cterm=underline
 
 " Set vim clipboard to use system clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Tab spacing
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-
+set backspace=indent,eol,start
 " Line numbers
 set number
 set autoindent
-set laststatus=1
+set laststatus=2
 " Instant esc, uncomment if the esc feel slow but will probably cause by other stuff
 "set ttimeout
 "set ttimeoutlen=10

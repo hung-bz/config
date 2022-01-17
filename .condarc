@@ -1,3 +1,2 @@
 changeps1: false
-channels:
-  - defaults
+unsatisfiable_hints: true
