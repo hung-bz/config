@@ -15,7 +15,7 @@ call vundle#end()
 
 " Let tmux change its pane name base on vim file name
 " That is currectly in focus
-autocmd BufEnter,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window 'vim " . expand("%:t") . "'")
+autocmd BufEnter,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
 " Clean up when leaving vim
 autocmd VimLeave * call system("tmux setw automatic-rename")
 
