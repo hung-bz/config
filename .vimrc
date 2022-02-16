@@ -50,9 +50,7 @@ set number
 set autoindent
 set laststatus=2
 " Instant esc, uncomment if the esc feel slow but will probably cause by other stuff
-"set ttimeout
-"set ttimeoutlen=10
-"set timeoutlen=10
+set ttimeoutlen=10 timeoutlen=1000
 
 " Yea might bite myself in the ass with this one
 set noswapfile
@@ -88,3 +86,5 @@ nnoremap <leader>c :set cursorline!<CR>
 " Auto center when moving up and down
 nnoremap <C-U> <C-U>zz
 nnoremap <C-D> <C-D>zz
+" Ctags jump
+nnoremap <leader>] <C-W>]
