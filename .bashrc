@@ -40,6 +40,7 @@ alias jn='jupyter notebook'
 alias jb='jupyter lab'
 alias xop='xdg-open'
 alias tce='conda activate $(tmux show-environment CONDA_DEFAULT_ENV | sed "s:^.*=::")'
+alias ctags="`brew --prefix`/bin/ctags"
 
 # fzf
 #[ -f ~/.fzf.bash ] && source ~/.fzf.bash
