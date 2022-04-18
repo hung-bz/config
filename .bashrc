@@ -28,8 +28,8 @@ set -o vi
 # LS color
 export LSCOLORS=GxBxhxDxfxhxhxhxhxcxcx
 # Default editor and visual
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='neovim'
+export VISUAL='neovim'
 
 # Autocomplete
 bind 'set show-all-if-ambiguous on'
