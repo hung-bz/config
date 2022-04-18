@@ -1,26 +1,29 @@
-"" Fuzzy Find
-set rtp+=~/opt/homebrew/opt/fzf
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" Let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ycm-core/YouCompleteMe'
-"Plugin 'junegunn/fzf'
-"Plugin 'junegunn/fzf.vim'
-call vundle#end()
+" Plugins
+call plug#begin()
+
+" LSP
+Plug 'neovim/nvim-lspconfig'  
+" Autocomplete
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+call plug#end()
+
+
+" lua require('lspconfig')
+lua require('lsp')
+lua require('autocmp')
 
 " Let tmux change its pane name base on vim file name
 " That is currectly in focus
-autocmd BufEnter,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
+autocmd BufEnter,FileReadPost,BufNewFile,FocusGained * call system("tmux rename-window " . expand("%:t"))
+" autocmd VimLeave * call system("tmux rename-window bash")
+
 " Clean up when leaving vim
 autocmd VimLeave * call system("tmux setw automatic-rename")
-
-" Something something YouCompleteMe
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion= 1
-" No more autocomplete highlighting
-let g:ycm_show_diagnostics_ui = 0
 
 " Syntax highlighting
 syntax on
@@ -33,6 +36,9 @@ hi Visual cterm=inverse ctermbg=black
 " Cursor line highlight  
 hi CursorLine cterm=underline
 
+" Who the fuck think this is a good idea to auto comment on new line
+set formatoptions-=cro
+
 " Set vim clipboard to use system clipboard
 set clipboard=unnamed
 
@@ -41,6 +47,12 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+
+" Starting to hate neovim abit
+autocmd Filetype * setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+set pumheight=2
+
 set backspace=indent,eol,start
 " Line numbers
 set number

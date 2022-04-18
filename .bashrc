@@ -1,5 +1,7 @@
 # Homebrew path
-#export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
+# Golang path
+export PATH=/Users/wren/go/bin:$PATH
 
 # append to the history file, don't overwrite it
 HISTCONTROL=ignoreboth
@@ -29,6 +31,10 @@ export LSCOLORS=GxBxhxDxfxhxhxhxhxcxcx
 export EDITOR='vim'
 export VISUAL='vim'
 
+# Autocomplete
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
+
 # Alias
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -38,14 +44,14 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias jn='jupyter notebook' 
 alias jb='jupyter lab'
-alias xop='xdg-open'
 alias tce='conda activate $(tmux show-environment CONDA_DEFAULT_ENV | sed "s:^.*=::")'
 alias ctags="`brew --prefix`/bin/ctags"
+alias nv='nvim'
 
 # fzf
-#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-#export FZF_DEFAULT_OPTS='
-#    --color=hl:#dc322f,hl+:#dc322f,pointer:#FF0000'
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS='
+    --color=hl:#dc322f,hl+:#dc322f,pointer:#FF0000'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
