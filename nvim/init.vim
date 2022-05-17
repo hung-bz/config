@@ -13,9 +13,8 @@ Plug 'hrsh7th/nvim-cmp'
 call plug#end()
 
 
-" lua require('lspconfig')
 lua require('lsp')
-lua require('autocmp')
+lua require('lspconfig')
 
 " Let tmux change its pane name base on vim file name
 " That is currectly in focus
