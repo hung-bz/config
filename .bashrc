@@ -2,6 +2,8 @@
 export PATH=/opt/homebrew/bin:$PATH
 # Golang path
 export PATH=/Users/wren/go/bin:$PATH
+# Java path
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
 # append to the history file, don't overwrite it
 HISTCONTROL=ignoreboth
@@ -28,8 +30,8 @@ set -o vi
 # LS color
 export LSCOLORS=GxBxhxDxfxhxhxhxhxcxcx
 # Default editor and visual
-export EDITOR='neovim'
-export VISUAL='neovim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # Autocomplete
 bind 'set show-all-if-ambiguous on'
@@ -47,6 +49,11 @@ alias jb='jupyter lab'
 alias tce='conda activate $(tmux show-environment CONDA_DEFAULT_ENV | sed "s:^.*=::")'
 alias ctags="`brew --prefix`/bin/ctags"
 alias nv='nvim'
+alias vi='nvim'
+alias cat='bat --theme=base16 --paging=never'
+
+# Delta with git
+alias ddiff='git diff | delta --features side-by-side --syntax-theme=ansi'
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
