@@ -9,19 +9,20 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 call plug#end()
-
 
 lua require('lsp')
 lua require('lspconfig')
 
+" Everything from down here does not required plugins
+
 " Let tmux change its pane name base on vim file name
 " That is currectly in focus
 autocmd BufEnter,FileReadPost,BufNewFile,FocusGained * call system("tmux rename-window " . expand("%:t"))
-" autocmd VimLeave * call system("tmux rename-window bash")
-
-" Clean up when leaving vim
 autocmd VimLeave * call system("tmux setw automatic-rename")
 
 " Syntax highlighting
@@ -30,7 +31,7 @@ color peachpuff
 " Green comments
 hi Comment ctermfg=darkgreen cterm=bold
 " Better highlight word color
-hi Search cterm=inverse ctermbg=black
+hi Search ctermfg=Red ctermbg=LightYellow
 hi Visual cterm=inverse ctermbg=black
 " Cursor line highlight  
 hi CursorLine cterm=underline
@@ -56,7 +57,7 @@ set backspace=indent,eol,start
 " Line numbers
 set number
 set autoindent
-set laststatus=2
+set laststatus=1
 " Instant esc, uncomment if the esc feel slow but will probably cause by other stuff
 set ttimeoutlen=10 timeoutlen=1000
 
@@ -89,10 +90,15 @@ vnoremap <S-Tab> <gv
 " Work around for <C-i> since alacritty saw it as <tab>
 nnoremap <C-n>i <C-i>
 " Toggle cursor line highlight
-highlight CursorLine cterm=None
 nnoremap <leader>c :set cursorline!<CR>
 " Auto center when moving up and down
 nnoremap <C-U> <C-U>zz
 nnoremap <C-D> <C-D>zz
 " Ctags jump
 nnoremap <leader>] <C-W>]
+" Resize split
+nnoremap <leader>= :exec "vertical resize ". (winwidth(0) * 4/3)<CR>
+nnoremap <leader>- :exec "vertical resize ". (winwidth(0) * 3/4)<CR>
+" Telescope
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>

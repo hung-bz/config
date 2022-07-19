@@ -76,3 +76,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export PATH="/Users/wren/miniforge3/bin:$PATH"
+. "$HOME/.cargo/env"
