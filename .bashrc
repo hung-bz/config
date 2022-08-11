@@ -51,9 +51,13 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias nv='nvim'
 alias vi='nvim'
 alias cat='bat --theme=base16 --paging=never'
+alias wdiff='watch --color git diff --color=always'
 
-# Delta with git
-alias ddiff='git diff | delta --features side-by-side --syntax-theme=ansi'
+# Delta with git, accept args just like git diff
+function ddiff() {
+  echo "$*"
+  git diff $* | delta --features side-by-side --syntax-theme=ansi --paging never
+}
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
