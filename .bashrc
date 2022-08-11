@@ -55,7 +55,6 @@ alias wdiff='watch --color git diff --color=always'
 
 # Delta with git, accept args just like git diff
 function ddiff() {
-  echo "$*"
   git diff $* | delta --features side-by-side --syntax-theme=ansi --paging never
 }
 
