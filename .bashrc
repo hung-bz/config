@@ -1,7 +1,12 @@
+# CURR PROJECT STUFF
+export PYTHONPATH=/Users/wren/fun/tinygrid
+export JUPYTER_PATH=/Users/wren/fun/tinygrid
 # Homebrew path
 export PATH=/opt/homebrew/bin:$PATH
 # Golang path
 export PATH=/Users/wren/go/bin:$PATH
+# User path
+export PATH=/Users/wren/bin:$PATH
 # Java path
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
