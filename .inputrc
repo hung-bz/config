@@ -1,1 +1,9 @@
-.inputrc
+# Vi mode
+set editing-mode vi
+set keymap vi-command
+set keyseq-timeout 10
+
+# Autocomlete
+set show-all-if-ambiguous on
+TAB:menu-complete
+
