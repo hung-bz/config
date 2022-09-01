@@ -8,7 +8,7 @@ export PATH=/Users/wren/go/bin:$PATH
 # User path
 export PATH=/Users/wren/bin:$PATH
 # Java path
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+export JAVA_HOME="JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home"
 
 # append to the history file, don't overwrite it
 HISTCONTROL=ignoreboth
@@ -23,7 +23,7 @@ source '/Users/wren/.git-prompt.sh'
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Bash prompt personalize
-export PS1='\[\e[00;33m\][$CONDA_DEFAULT_ENV]\[\e[00m\] \[\e[01;32m\]\h\[\e[00m\] \[\e[01;31m\]::\[\e[00m\] \[\e[01;32m\]\u\[\e[00m\] \[\e[01;36m\]\w\[\e[00m\]\[\e[00;35m\]$(__git_ps1)\[\e[00m\] \[\e[01;31m\]»\[\e[00m\] '
+export PS1='\[\e[00;33m\][$CONDA_DEFAULT_ENV]\[\e[00m\] \[\e[01;32m\]\w\[\e[00m\]\[\e[00;35m\]$(__git_ps1)\[\e[00m\] \[\e[01;31m\]»\[\e[00m\] '
 export PS2='» '
 
 # I dunno
