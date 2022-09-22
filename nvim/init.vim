@@ -35,6 +35,8 @@ hi Search ctermfg=Red ctermbg=LightYellow
 hi Visual cterm=inverse ctermbg=black
 " Cursor line highlight  
 hi CursorLine cterm=underline
+" Grey Python docstring
+hi def pythonDocstring ctermfg=darkgrey cterm=bold
 
 " Who the fuck think this is a good idea to auto comment on new line
 set formatoptions-=cro
@@ -74,6 +76,10 @@ set showcmd
 " Split side
 set splitbelow
 set splitright
+
+" Is this overkill?
+command! -bar -nargs=* -complete=file -range=% -bang W         <line1>,<line2>write<bang> <args>
+command! -bar -nargs=* -complete=file -range=% -bang Wq        <line1>,<line2>wq<bang> <args>
 
 " Map leader
 let mapleader="\<space>"
