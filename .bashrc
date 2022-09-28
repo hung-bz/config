@@ -23,7 +23,16 @@ source '/Users/wren/.git-prompt.sh'
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Bash prompt personalize
-export PS1='\[\e[00;33m\][$CONDA_DEFAULT_ENV]\[\e[00m\] \[\e[01;32m\]\w\[\e[00m\]\[\e[00;35m\]$(__git_ps1)\[\e[00m\] \[\e[01;31m\]»\[\e[00m\] '
+get_exit_status(){
+   es=$?
+   if [ $es -eq 0 ]
+   then
+       echo -e ""
+   else
+       echo -e "${es} "
+   fi
+}
+export PS1='\[\e[00;33m\][$CONDA_DEFAULT_ENV]\[\e[00m\] \[\e[01;32m\]\w\[\e[00m\]\[\e[00;35m\]$(__git_ps1)\[\e[00m\] \[\e[01;31m\]» $(get_exit_status)\[\e[00m\]' 
 export PS2='» '
 
 # I dunno
