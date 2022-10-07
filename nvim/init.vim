@@ -65,9 +65,9 @@ lua vim.o.ch = 0
 " Winbar sub for laststatus
 set laststatus=0
 " Winbar same as default laststatus
-hi winbar cterm=bold,reverse,italic
-hi winbarnc cterm=bold,italic
-set winbar=\ %f%=%l:%c\ %p%%\ 
+hi winbar cterm=bold,italic
+hi winbarnc ctermfg=DarkGray cterm=bold,italic
+set winbar=\ %F\ %=%l:%c\ %p%%\ 
 
 " Instant esc, uncomment if the esc feel slow but will probably cause by other stuff
 set ttimeoutlen=10 timeoutlen=1000
