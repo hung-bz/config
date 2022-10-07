@@ -65,12 +65,9 @@ lua vim.o.ch = 0
 " Winbar sub for laststatus
 set laststatus=0
 " Winbar same as default laststatus
-hi winbar guibg=Black guifg=White cterm=bold,reverse
-set winbar=\ %f
-set winbar+=%=
-set winbar+=\ %l:%c
-set winbar+=\ %p%%
-set winbar+=\ 
+hi winbar cterm=bold,reverse,italic
+hi winbarnc cterm=bold,italic
+set winbar=\ %f%=%l:%c\ %p%%\ 
 
 " Instant esc, uncomment if the esc feel slow but will probably cause by other stuff
 set ttimeoutlen=10 timeoutlen=1000
@@ -82,7 +79,7 @@ set noswapfile
 set incsearch
 set hlsearch
 
-" Show normal mode command
+" Show normal mode command (since ch=0 this would not work)
 set showcmd
 
 " Split side
@@ -90,8 +87,8 @@ set splitbelow
 set splitright
 
 " Is this overkill?
-command! -bar -nargs=* -complete=file -range=% -bang W         <line1>,<line2>write<bang> <args>
-command! -bar -nargs=* -complete=file -range=% -bang Wq        <line1>,<line2>wq<bang> <args>
+command! -bar -nargs=* -complete=file -range=% -bang W <line1>,<line2>write<bang> <args>
+command! -bar -nargs=* -complete=file -range=% -bang Wq <line1>,<line2>wq<bang> <args>
 
 " Map leader
 let mapleader="\<space>"
