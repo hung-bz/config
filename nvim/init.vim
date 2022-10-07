@@ -59,7 +59,19 @@ set backspace=indent,eol,start
 " Line numbers
 set number
 set autoindent
-set laststatus=1
+
+" Finally, collasping the command line when not needed.
+lua vim.o.ch = 0
+" Winbar sub for laststatus
+set laststatus=0
+" Winbar same as default laststatus
+hi winbar guibg=Black guifg=White cterm=bold,reverse
+set winbar=\ %f
+set winbar+=%=
+set winbar+=\ %l:%c
+set winbar+=\ %p%%
+set winbar+=\ 
+
 " Instant esc, uncomment if the esc feel slow but will probably cause by other stuff
 set ttimeoutlen=10 timeoutlen=1000
 
