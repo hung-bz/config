@@ -65,8 +65,7 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias nv='nvim'
 alias vi='nvim'
 alias cat='bat --theme=base16 --paging=never'
-alias wdiff='watch --color git diff --color=always'
-
+alias wgit='watch -n 0.5 --color git -c color.status=always status'
 # Delta with git, accept args just like git diff
 function ddiff() {
   git diff $* | delta --features side-by-side --syntax-theme=ansi --paging never
