@@ -58,3 +58,32 @@ hi Ignore cterm=bold ctermfg=7 guifg=bg
 hi Error term=reverse cterm=bold ctermfg=7 ctermbg=1 gui=bold guifg=White guibg=Red
 hi Todo term=standout ctermfg=0 ctermbg=3 guifg=Blue guibg=Yellow
 
+" Tree-sitter highlight. (IDK why i havent move over to vscode, cause setting this up is a pain)
+"Misc
+hi TSPunctDelimiter ctermfg=White
+hi TSPunctBracket ctermfg=White
+hi TSPunctSpecial ctermfg=White
+hi TSComment cterm=bold ctermfg=DarkGreen
+
+" Function, class and method
+hi TSFunction ctermfg=DarkCyan
+hi TSFunctionCall ctermfg=DarkCyan
+hi TSFuncBuiltin ctermfg=DarkCyan
+hi TSParameterReference ctermfg=White
+hi TSConstructor ctermfg=DarkCyan
+hi TSMethod ctermfg=DarkCyan
+hi TSMethodCall ctermfg=White
+
+
+" Constant
+hi TSBoolean ctermfg=DarkCyan
+hi TSConstant ctermfg=Cyan
+hi TSConstantBuiltin ctermfg=DarkCyan
+hi TSNamespace ctermfg=DarkCyan
+
+" Variable
+hi TSVariable ctermfg=White
+hi TSVariableBuiltin ctermfg=White
+hi TSParameter ctermfg=White
+hi TSField ctermfg=White
+hi TSProperty ctermfg=White
