@@ -12,11 +12,13 @@ Plug 'hrsh7th/nvim-cmp'
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+" Tree-sitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
 lua require('lsp')
-lua require('lspconfig')
+lua require('treesitter')
 
 " Everything from down here does not required plugins
 
@@ -28,6 +30,7 @@ autocmd VimLeave * call system("tmux setw automatic-rename")
 " Syntax highlighting
 syntax on
 color peachpuff
+
 " Green comments
 hi Comment ctermfg=darkgreen cterm=bold
 " Better highlight word color
@@ -49,6 +52,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set autoindent
 
 " Starting to hate neovim abit
 autocmd Filetype * setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -56,9 +60,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set pumheight=2
 
 set backspace=indent,eol,start
-" Line numbers
-set number
-set autoindent
+" Line numbers, hybrid relative
+set number relativenumber
 
 " Status bar
 set laststatus=1
