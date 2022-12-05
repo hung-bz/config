@@ -64,6 +64,8 @@ hi TSPunctDelimiter ctermfg=White
 hi TSPunctBracket ctermfg=White
 hi TSPunctSpecial ctermfg=White
 hi TSComment cterm=bold ctermfg=DarkGreen
+" Python block comment
+hi @spell.python cterm=bold ctermfg=DarkGreen
 
 " Function, class and method
 hi TSFunction ctermfg=DarkCyan
@@ -72,13 +74,12 @@ hi TSFuncBuiltin ctermfg=DarkCyan
 hi TSParameterReference ctermfg=White
 hi TSConstructor ctermfg=DarkCyan
 hi TSMethod ctermfg=DarkCyan
-hi TSMethodCall ctermfg=White
-
+hi TSMethodCall ctermfg=DarkCyan
 
 " Constant
-hi TSBoolean ctermfg=DarkCyan
-hi TSConstant ctermfg=Cyan
-hi TSConstantBuiltin ctermfg=DarkCyan
+hi TSBoolean ctermfg=Magenta
+hi TSConstant ctermfg=LightRed
+hi TSConstantBuiltin ctermfg=LightRed
 hi TSNamespace ctermfg=DarkCyan
 
 " Variable
