@@ -81,6 +81,8 @@ hi TSBoolean ctermfg=Magenta
 hi TSConstant ctermfg=LightRed
 hi TSConstantBuiltin ctermfg=LightRed
 hi TSNamespace ctermfg=DarkCyan
+" hi @error.python ctermfg=Magenta
+" hi TSError ctermfg=Magenta
 
 " Variable
 hi TSVariable ctermfg=White
