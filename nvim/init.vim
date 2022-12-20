@@ -27,8 +27,10 @@ lua require('treesitter')
 autocmd BufEnter,FileReadPost,BufNewFile,FocusGained * call system("tmux rename-window " . expand("%:t"))
 autocmd VimLeave * call system("tmux setw automatic-rename")
 
-" Syntax highlighting
-syntax on
+" Syntax highlighting (off cause we have LSP and treesitter, turn this on if dont have)
+syntax off
+filetype plugin off
+filetype indent off
 color peachpuff
 
 " Green comments
@@ -54,9 +56,6 @@ set softtabstop=2
 set expandtab
 set autoindent
 
-" Starting to hate neovim abit
-autocmd Filetype * setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set pumheight=2
 
 set backspace=indent,eol,start
