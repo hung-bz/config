@@ -1,6 +1,3 @@
-# CURR PROJECT STUFF
-export PYTHONPATH=/Users/wren/fun/tinygrid
-export JUPYTER_PATH=/Users/wren/fun/tinygrid
 # Homebrew path
 export PATH=/opt/homebrew/bin:$PATH
 # Golang path
@@ -32,7 +29,7 @@ get_exit_status(){
        echo -e "${es} "
    fi
 }
-export PS1='\[\e[00;33m\][$CONDA_DEFAULT_ENV]\[\e[00m\] \[\e[01;32m\]\w\[\e[00m\]\[\e[00;35m\]$(__git_ps1)\[\e[00m\] \[\e[01;31m\]» $(get_exit_status)\[\e[00m\]' 
+export PS1='\[\e[01;38m\]\u@\h\[\e[00m\] \[\e[01;32m\]\w\[\e[00m\]\[\e[00;35m\]$(__git_ps1)\[\e[00m\] \[\e[01;31m\]» $(get_exit_status)\[\e[00m\]' 
 export PS2='» '
 
 # I dunno
@@ -66,9 +63,11 @@ alias nv='nvim'
 alias vi='nvim'
 alias cat='bat --theme=base16 --paging=never'
 alias wgit='watch -n 0.5 --color git -c color.status=always status'
+# Short alias for activating env
+alias senv="source venv/bin/activate"
 # Delta with git, accept args just like git diff
 function ddiff() {
-  git diff $* | delta --features side-by-side --syntax-theme=ansi --paging never
+  git diff $* | delta --features side-by-side --syntax-theme=ansi --paging never --file-style 'red bold ul'
 }
 
 # fzf
@@ -76,20 +75,10 @@ function ddiff() {
 export FZF_DEFAULT_OPTS='
     --color=hl:#dc322f,hl+:#dc322f,pointer:#FF0000'
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/wren/miniforge3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/wren/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/Users/wren/miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/wren/miniforge3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+# Rust?
 export PATH="/Users/wren/miniforge3/bin:$PATH"
 . "$HOME/.cargo/env"
+
+if [ -n "$VIRTUAL_ENV" ]; then
+    source $VIRTUAL_ENV/bin/activate;
+fi
