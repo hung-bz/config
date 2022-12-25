@@ -28,9 +28,9 @@ autocmd BufEnter,FileReadPost,BufNewFile,FocusGained * call system("tmux rename-
 autocmd VimLeave * call system("tmux setw automatic-rename")
 
 " Syntax highlighting (off cause we have LSP and treesitter, turn this on if dont have)
-syntax off
+syntax on
 filetype plugin off
-filetype indent off
+filetype indent on
 color peachpuff
 
 " Green comments
@@ -49,12 +49,15 @@ set formatoptions-=cro
 " Set vim clipboard to use system clipboard
 set clipboard=unnamed
 
-" Tab spacing
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set autoindent
+" Starting to hate neovim abit
+autocmd Filetype * setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r 
+" " Tab spacing
+" set tabstop=2
+" set shiftwidth=2
+" set softtabstop=2
+" set expandtab
+" set autoindent
 
 set pumheight=2
 
