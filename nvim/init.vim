@@ -1,6 +1,5 @@
 " Plugins
 call plug#begin()
-
 " LSP
 Plug 'neovim/nvim-lspconfig'  
 " Autocomplete
@@ -14,11 +13,14 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 " Tree-sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
+Plug 'nvim-treesitter/playground'
+" Comment
+Plug 'terrortylor/nvim-comment'
 call plug#end()
 
 lua require('lsp')
 lua require('treesitter')
+lua require('comment')
 
 " Everything from down here does not required plugins
 
@@ -29,8 +31,6 @@ autocmd VimLeave * call system("tmux setw automatic-rename")
 
 " Syntax highlighting (off cause we have LSP and treesitter, turn this on if dont have)
 syntax on
-filetype plugin off
-filetype indent on
 color peachpuff
 
 " Green comments
@@ -40,24 +40,14 @@ hi Search ctermfg=Red ctermbg=LightYellow
 hi Visual cterm=inverse ctermbg=black
 " Cursor line highlight  
 hi CursorLine cterm=underline
-" Grey Python docstring
-hi def pythonDocstring ctermfg=darkgrey cterm=bold
-
-" Who the fuck think this is a good idea to auto comment on new line
-set formatoptions-=cro
 
 " Set vim clipboard to use system clipboard
 set clipboard=unnamed
 
-" Starting to hate neovim abit
+" Global tab spacing on all filetype
 autocmd Filetype * setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r 
-" " Tab spacing
-" set tabstop=2
-" set shiftwidth=2
-" set softtabstop=2
-" set expandtab
-" set autoindent
+autocmd FileType * setlocal formatoptions-=cro
+set autoindent
 
 set pumheight=2
 
