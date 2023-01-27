@@ -1,14 +1,4 @@
-" Vim color file
-" Maintainer: David Ne\v{c}as (Yeti) <yeti@physics.muni.cz>
-" Last Change: 2003-04-23
-" URL: http://trific.ath.cx/Ftp/vim/colors/peachpuff.vim
-
-" This color scheme uses a peachpuff background (what you've expected when it's
-" called peachpuff?).
-"
-" Note: Only GUI colors differ from default, on terminal it's just `light'.
-
-" First remove all existing highlighting.
+" My version of peachpuff with tree-sitter
 set background=light
 hi clear
 if exists("syntax_on")
@@ -56,7 +46,6 @@ hi PreProc term=underline ctermfg=5 guifg=Magenta3
 hi Type term=underline ctermfg=2 gui=bold guifg=SeaGreen
 hi Ignore cterm=bold ctermfg=7 guifg=bg
 hi Error term=reverse cterm=bold ctermfg=7 ctermbg=1 gui=bold guifg=White guibg=Red
-hi Todo term=standout ctermfg=0 ctermbg=3 guifg=Blue guibg=Yellow
 
 " Tree-sitter highlight. (IDK why i havent move over to vscode, cause setting this up is a pain)
 "Misc
@@ -66,6 +55,10 @@ hi TSPunctSpecial ctermfg=White
 hi TSComment cterm=bold ctermfg=DarkGreen
 " Python block comment
 hi @spell.python cterm=bold ctermfg=DarkGreen
+
+" Highlight for special comment tags
+hi TSNote cterm=bold ctermfg=Black ctermbg=LightBlue
+hi TSDanger cterm=bold ctermfg=White ctermbg=Red
 
 " Function, class and method
 hi TSFunction ctermfg=DarkCyan
@@ -81,8 +74,6 @@ hi TSBoolean ctermfg=Magenta
 hi TSConstant ctermfg=LightRed
 hi TSConstantBuiltin ctermfg=LightRed
 hi TSNamespace ctermfg=DarkCyan
-" hi @error.python ctermfg=Magenta
-" hi TSError ctermfg=Magenta
 
 " Variable
 hi TSVariable ctermfg=White
