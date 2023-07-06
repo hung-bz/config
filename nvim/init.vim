@@ -26,15 +26,13 @@ lua require('comment')
 
 " Let tmux change its pane name base on vim file name
 " That is currectly in focus
-autocmd BufEnter,FileReadPost,BufNewFile,FocusGained * call system("tmux rename-window " . expand("%:t"))
-autocmd VimLeave * call system("tmux setw automatic-rename")
+" autocmd BufEnter,FileReadPost,BufNewFile,FocusGained * call system("tmux rename-window " . expand("%:t"))
+" autocmd VimLeave * call system("tmux setw automatic-rename")
 
 " Syntax highlighting (off cause we have LSP and treesitter, turn this on if dont have)
 syntax on
 color peachpuff
 
-" Green comments
-hi Comment ctermfg=darkgreen cterm=bold
 " Better highlight word color
 hi Search ctermfg=Red ctermbg=LightYellow
 hi Visual cterm=inverse ctermbg=black
@@ -104,8 +102,10 @@ nnoremap <C-D> <C-D>zz
 " Ctags jump
 nnoremap <leader>] <C-W>]
 " Resize split
-nnoremap <leader>= :exec "vertical resize ". (winwidth(0) * 4/3)<CR>
-nnoremap <leader>- :exec "vertical resize ". (winwidth(0) * 3/4)<CR>
+nnoremap <leader>= :exec "vertical resize ". (winwidth(0) * 7/6)<CR>
+nnoremap <leader>- :exec "vertical resize ". (winwidth(0) * 6/7)<CR>
 " Telescope
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+" Vim will boost your productivity they said...
+nnoremap <leader>r :exec "source $MYVIMRC"<cr>

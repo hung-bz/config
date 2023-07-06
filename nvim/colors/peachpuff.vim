@@ -52,9 +52,9 @@ hi Error term=reverse cterm=bold ctermfg=7 ctermbg=1 gui=bold guifg=White guibg=
 hi TSPunctDelimiter ctermfg=White
 hi TSPunctBracket ctermfg=White
 hi TSPunctSpecial ctermfg=White
-hi TSComment cterm=bold ctermfg=DarkGreen
 " Python block comment
-hi @spell.python cterm=bold ctermfg=DarkGreen
+hi TSComment ctermfg=DarkGray
+hi @spell.python ctermfg=DarkGray
 
 " Highlight for special comment tags
 hi TSNote cterm=bold ctermfg=Black ctermbg=LightBlue
