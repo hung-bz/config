@@ -31,7 +31,7 @@ lua require('comment')
 
 " Syntax highlighting (off cause we have LSP and treesitter, turn this on if dont have)
 syntax on
-color peachpuff
+color peachpuff 
 
 " Better highlight word color
 hi Search ctermfg=Red ctermbg=LightYellow
@@ -109,3 +109,5 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 " Vim will boost your productivity they said...
 nnoremap <leader>r :exec "source $MYVIMRC"<cr>
+" Custom command
+command! -range=% Dws <line1>,<line2>s/\s\+$//e
