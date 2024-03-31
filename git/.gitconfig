@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-  name = Ba Hung Huynh
-  email = ba.hung.huynh@proton.me
+  name = hbhungg
+  email = hung.ba.huynh@proton.me
 [core]
 	editor = nvim
 [push]
